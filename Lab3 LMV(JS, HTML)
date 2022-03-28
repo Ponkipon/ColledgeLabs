@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lab 3</title>
+    <style>
+        body {
+            background-color: #000000;
+        }
+
+        .clock {
+            color: #ffffff;
+            margin-top: 7vh;
+            font-weight: bold;
+            font-size: 30vh;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .main-head {
+            color: #ffffff;
+            text-align: center;
+            font-style:oblique;
+            align-items: center;
+            height: 100%;
+            font-size: 4vh;
+        }
+
+        .form0 {
+            color: #000000;
+            text-align: center;
+            justify-content: center;
+            color: #ff0000;
+            display: flex;
+            align-items: center;
+        }
+
+        .text-in-form {
+            text-align: center;
+            justify-content: center;
+            color: #ff0000;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main>
+        <div class="main-head">
+            <p>Матющенко Михайло</p>
+            <p>Лабораторна 3</p>
+        </div>
+        <div class="clock">
+            <div id="clock">
+                <script lang="Javascript">
+                function clock()
+                {
+                var date = new Date(),
+                       hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours(),
+                       minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes(),
+                       seconds = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds();
+                document.getElementById('clock').innerHTML = minutes + ':' + seconds + ':' + hours;
+                }
+              setInterval(clock, 1000);
+              clock();
+            </script>
+            </div>
+        </div>
+        <div class="form0">
+            <script class="text-in-form">
+                function fun(a)
+                {
+                    form0.status.value = a;
+                }
+            </script>
+            <form class="form0" id="form0"> 
+                <input type="text" size="40vh" class="text-in-form" value="Loadng..." onchange="fun('Зміст текстового поля форми змінений.');" onselect="fun('В текстовоу полі форми виділений текст');">
+                <input type="text" size="40vh" id="status">
+            </form>
+
+        </div>
+    </main>
+</body>
+
+</html>
